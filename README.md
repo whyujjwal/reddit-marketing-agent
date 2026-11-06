@@ -73,7 +73,7 @@ You need [uv](https://docs.astral.sh/uv/getting-started/installation/) (`curl -L
 ### Claude Code: MCP server only
 
 ```bash
-claude mcp add reddit-marketing -s user -- uvx --from git+https://github.com/whyujjwal/reddit-marketing-agent reddit-marketing-agent
+claude mcp add reddit-marketing -s user -- uvx --managed-python --from git+https://github.com/whyujjwal/reddit-marketing-agent reddit-marketing-agent
 ```
 
 ### Claude Desktop
@@ -85,13 +85,17 @@ Add this to `claude_desktop_config.json` (Settings → Developer → Edit Config
   "mcpServers": {
     "reddit-marketing": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/whyujjwal/reddit-marketing-agent", "reddit-marketing-agent"]
+      "args": ["--managed-python", "--from", "git+https://github.com/whyujjwal/reddit-marketing-agent", "reddit-marketing-agent"]
     }
   }
 }
 ```
 
 If Claude Desktop can't find `uvx`, use its full path (run `which uvx`).
+
+`--managed-python` makes uv use its own native Python build. Without it, an active Conda or
+Intel (x86_64) Python on an Apple Silicon Mac can be picked instead, and installing
+`cryptography` (a dependency of the MCP SDK) then fails.
 
 ### From source
 
@@ -109,7 +113,7 @@ Opening the cloned folder in Claude Code picks up the bundled `.mcp.json` automa
 It works with zero configuration in `rss` mode. To unlock more, create a config file:
 
 ```bash
-uvx --from git+https://github.com/whyujjwal/reddit-marketing-agent reddit-marketing-agent init
+uvx --managed-python --from git+https://github.com/whyujjwal/reddit-marketing-agent reddit-marketing-agent init
 ```
 
 That writes `~/.reddit-marketing-agent/.env` (readable only by you). Fill in what you have:
