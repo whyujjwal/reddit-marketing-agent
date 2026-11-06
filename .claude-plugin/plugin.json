@@ -1,0 +1,13 @@
+{
+  "name": "reddit-marketing",
+  "description": "Turn Claude into a careful Reddit marketing agent: discover communities, find conversations worth joining, draft helpful replies with disclosure, and publish only what you approve.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ujjwal Raj",
+    "url": "https://github.com/whyujjwal"
+  },
+  "homepage": "https://github.com/whyujjwal/reddit-marketing-agent",
+  "repository": "https://github.com/whyujjwal/reddit-marketing-agent",
+  "license": "MIT",
+  "keywords": ["reddit", "marketing", "growth", "community", "mcp"]
+}

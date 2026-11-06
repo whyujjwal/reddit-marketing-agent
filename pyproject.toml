@@ -1,0 +1,54 @@
+[project]
+name = "reddit-marketing-agent"
+version = "0.1.0"
+description = "An MCP server that turns Claude into a careful Reddit marketing agent: find communities, spot conversations worth joining, draft replies, and publish only after you approve."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "Ujjwal Raj" }]
+keywords = ["reddit", "marketing", "mcp", "claude", "model-context-protocol", "community", "growth"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Communications",
+  "Topic :: Internet",
+]
+dependencies = [
+  "mcp>=2.3.0",
+  "httpx>=0.28",
+  "python-dotenv>=1.0",
+  "defusedxml>=0.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/whyujjwal/reddit-marketing-agent"
+Issues = "https://github.com/whyujjwal/reddit-marketing-agent/issues"
+
+[project.scripts]
+reddit-marketing-agent = "reddit_marketing_agent.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/reddit_marketing_agent"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"skills/reddit-marketing/SKILL.md" = "reddit_marketing_agent/playbook.md"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]  # long lines are left to the formatter

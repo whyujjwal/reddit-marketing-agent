@@ -1,0 +1,19 @@
+{
+  "name": "reddit-marketing-agent",
+  "description": "Reddit marketing agent for Claude Code",
+  "owner": {
+    "name": "Ujjwal Raj",
+    "url": "https://github.com/whyujjwal"
+  },
+  "plugins": [
+    {
+      "name": "reddit-marketing",
+      "description": "Turn Claude into a careful Reddit marketing agent: discover communities, find conversations worth joining, draft helpful replies with disclosure, and publish only what you approve.",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "Ujjwal Raj"
+      }
+    }
+  ]
+}
