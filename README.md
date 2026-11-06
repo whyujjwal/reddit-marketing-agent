@@ -10,7 +10,6 @@ It's an [MCP](https://modelcontextprotocol.io) server, so you control it from **
 
 > *"Find threads this week where freelancers are asking for invoicing tools, and draft replies for the best three."*
 
-[![CI](https://github.com/whyujjwal/reddit-marketing-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/whyujjwal/reddit-marketing-agent/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
